@@ -1,6 +1,7 @@
 const VERIFIED_DATE = '4 ต.ค. 2569';
 const ASA_INDEX = 'https://download.asa.or.th/03media/04law/fubr/Content_240116.pdf';
 const ASA_PAGE = 'https://asa.or.th/laws-and-regulations/cba/';
+const LANDMAPS_URL = 'https://landsmaps.dol.go.th/?ref=blog.nayoo.co';
 
 const direct = (label, url) => ({label, url, kind:'ASA PDF'});
 const fallbackSources = () => [
@@ -123,6 +124,112 @@ function renderLaws(){
 function render(){ renderGroups(); renderCategories(); renderLaws(); $('showFavorites').textContent=favoritesOnly?'★ กำลังดูกฎหมายของฉัน':'☆ กฎหมายของฉัน'; }
 function openLaw(id){ const l=laws.find(x=>x.id===id); if(!l)return; selectedLaw=l; $('dialogBadges').innerHTML=l.badges.map(x=>`<span class="chip">${x}</span>`).join(''); $('dialogTitle').textContent=l.title; $('dialogMeta').textContent=`${l.jurisdiction} • ตรวจสอบดัชนี/ลิงก์ ${VERIFIED_DATE}`; $('dialogSummary').textContent=l.summary; $('dialogTopics').innerHTML=l.topics.map(x=>`<li>${x}</li>`).join(''); $('dialogRefs').innerHTML=l.refs.map(x=>`<div class="ref-item">${x}</div>`).join(''); $('dialogSources').innerHTML=l.sources.map(s=>`<a class="source-link" href="${s.url}" target="_blank" rel="noopener"><span>${s.label}</span><small>${s.kind} ↗</small></a>`).join(''); $('dialogNote').textContent=l.note; updateDialogFavorite(); $('lawDialog').showModal(); }
 function updateDialogFavorite(){ if(selectedLaw)$('favoriteBtn').textContent=isFavorite(selectedLaw.id)?'★ เก็บไว้แล้ว':'☆ เก็บไว้'; }
+
+
+const smartTypeNames = {
+  house:'บ้านพักอาศัย', residential:'อาคารอยู่อาศัยรวม', condo:'อาคารชุด', office:'สำนักงาน',
+  commercial:'อาคารพาณิชยกรรม / ร้านค้า', hotel:'โรงแรม', theater:'โรงมหรสพ', service:'สถานบริการ',
+  warehouse:'คลังสินค้า', factory:'โรงงาน', other:'อาคารประเภทอื่น'
+};
+const smartLocationNames = {nonthaburi:'เทศบาลนครนนทบุรี', bangkok:'กรุงเทพมหานคร', other:'พื้นที่อื่น / ยังไม่ระบุ'};
+
+function smartAdd(map,id,level,reason){
+  const law=laws.find(x=>x.id===id); if(!law)return;
+  const rank={core:1,direct:2,local:3,conditional:4};
+  const prev=map.get(id);
+  if(!prev || rank[level] < rank[prev.level]) map.set(id,{law,level,reason});
+  else if(reason && !prev.reason.includes(reason)) prev.reason += ` • ${reason}`;
+}
+function analyzeSmart(){
+  const type=$('smartType').value;
+  const height=Number($('smartHeight').value)||0;
+  const area=Number($('smartArea').value)||0;
+  const road=Number($('smartRoad').value)||0;
+  const location=$('smartLocation').value;
+  const rec=new Map();
+  const warnings=[];
+
+  smartAdd(rec,'building-control-act-2522','core','กฎหมายแม่บทเรื่องการก่อสร้าง การอนุญาต การตรวจ และคำสั่งตามกฎหมายควบคุมอาคาร');
+  smartAdd(rec,'a1','core',road>0?`ต้องตรวจลักษณะอาคาร ที่ว่าง และระยะที่สัมพันธ์กับถนนที่กรอก ${road.toLocaleString('th-TH')} ม.`:'ต้องตรวจลักษณะอาคาร ที่ว่าง ระยะร่น และข้อกำหนดพื้นฐานของอาคาร');
+  smartAdd(rec,'c3','core','ใช้ตรวจขั้นตอน คำขอ เอกสาร ใบอนุญาต การต่ออายุ/โอน และใบรับรอง');
+  smartAdd(rec,'c8','core','ใช้ตรวจหลักเกณฑ์และวิธีการก่อสร้าง ดัดแปลง รื้อถอน เคลื่อนย้าย ใช้หรือเปลี่ยนการใช้อาคาร');
+  smartAdd(rec,'a10-2','conditional','ควรตรวจฐานรากและพื้นดินที่รองรับอาคารประกอบการออกแบบ');
+  smartAdd(rec,'a10-3','conditional','ควรตรวจหลักการออกแบบโครงสร้างและวัสดุโครงสร้าง');
+
+  let classification=[];
+  if(height>=23){
+    classification.push('ความสูงตั้งแต่ 23 ม. → เข้าข่ายนิยาม “อาคารสูง”');
+    smartAdd(rec,'a3','direct',`ความสูง ${height.toLocaleString('th-TH')} ม. ถึงเกณฑ์อาคารสูงที่ต้องเปิดตรวจข้อกำหนดเฉพาะ`);
+  }
+  if(area>=10000){
+    classification.push('พื้นที่รวมตั้งแต่ 10,000 ตร.ม. → เข้าข่าย “อาคารขนาดใหญ่พิเศษ”');
+    smartAdd(rec,'a3','direct',`พื้นที่รวม ${area.toLocaleString('th-TH')} ตร.ม. ถึงเกณฑ์อาคารขนาดใหญ่พิเศษ`);
+  }
+  const large = area>2000 || (height>=15 && area>1000 && area<=2000);
+  if(large){
+    classification.push('ข้อมูลพื้นที่/ความสูงเข้าเงื่อนไขที่ควรตรวจนิยาม “อาคารขนาดใหญ่” ในกฎ 55');
+    smartAdd(rec,'a1','direct','ข้อมูลพื้นที่และความสูงเข้าเงื่อนไขที่ควรตรวจข้อกำหนดสำหรับอาคารขนาดใหญ่');
+  }
+
+  const parkingTypes=['residential','condo','office','commercial','hotel','theater','service'];
+  if(parkingTypes.includes(type)){
+    smartAdd(rec,'a4','conditional',`ประเภท ${smartTypeNames[type]} ควรตรวจว่าเข้าประเภท/ขนาดที่ต้องจัดจำนวนที่จอดรถหรือไม่`);
+    smartAdd(rec,'a5','conditional','หากต้องจัดที่จอดรถ ให้ตรวจลักษณะ/ขนาดและระบบที่เกี่ยวข้องเพิ่มเติม');
+  }
+  if(type==='hotel'){
+    smartAdd(rec,'a13','direct','เลือกประเภทโรงแรม จึงต้องเปิดข้อกำหนดลักษณะและระบบความปลอดภัยของโรงแรม');
+    smartAdd(rec,'c2','conditional','ควรตรวจสถานะอาคารประเภทควบคุมการใช้และใบรับรองตามเงื่อนไข');
+  }
+  if(type==='theater'){
+    smartAdd(rec,'a8','direct','เลือกโรงมหรสพ จึงมีกฎหมายเฉพาะเรื่องการอนุญาตใช้และระบบความปลอดภัย');
+    smartAdd(rec,'c2','conditional','ควรตรวจอาคารประเภทควบคุมการใช้และใบรับรอง');
+  }
+  if(type==='service'){
+    smartAdd(rec,'a9','direct','เลือกสถานบริการ จึงมีกฎหมายเฉพาะเรื่องระบบความปลอดภัย');
+    smartAdd(rec,'c2','conditional','ควรตรวจอาคารประเภทควบคุมการใช้และใบรับรอง');
+  }
+  if(['condo','office','commercial','hotel','theater','service'].includes(type)){
+    smartAdd(rec,'a7','conditional','ตรวจเพิ่มเติมว่าอาคารประเภท/ขนาดนี้อยู่ในบังคับสิ่งอำนวยความสะดวกสำหรับผู้พิการหรือคนชราหรือไม่');
+  }
+  if(['condo','hotel','commercial','office'].includes(type)){
+    smartAdd(rec,'b5','conditional','ประเภทโครงการอาจมีเกณฑ์ EIA ที่ต้องใช้ข้อมูลเพิ่ม เช่น จำนวนห้อง/หน่วย พื้นที่ หรือที่ตั้ง');
+  }
+  if(area>=2000 && ['office','commercial','hotel','condo','residential','other'].includes(type)){
+    smartAdd(rec,'b6','conditional','อาคารขนาดนี้ควรตรวจเกณฑ์ประเภท/ขนาดของกฎหมายอนุรักษ์พลังงาน (BEC) เพิ่มเติม');
+    smartAdd(rec,'b7','conditional','หากเข้าข่าย BEC ต้องตรวจค่ามาตรฐานการออกแบบที่เกี่ยวข้อง');
+  }
+  smartAdd(rec,'a12','conditional','ควรตรวจระบบระบายน้ำ น้ำเสีย และข้อกำหนดสุขาภิบาลตามประเภท/ขนาดอาคาร');
+
+  if(location==='nonthaburi'){
+    const localApplies = ['condo','office','commercial','hotel','theater'].includes(type) || (type==='residential' && area>=300) || large;
+    if(localApplies) smartAdd(rec,'nonthaburi-parking-2560','local','ที่ตั้งอยู่เทศบาลนครนนทบุรี และประเภท/ขนาดที่กรอกมีประเด็นต้องตรวจเทศบัญญัติที่จอดรถท้องถิ่น');
+    warnings.push('ฐานท้องถิ่นนนทบุรีในแอปตอนนี้มีเทศบัญญัติที่จอดรถเป็นหลัก ผังเมืองและข้อบัญญัติท้องถิ่นฉบับอื่นยังต้องตรวจเพิ่มจากต้นฉบับที่ใช้บังคับจริง');
+  } else if(location==='bangkok'){
+    smartAdd(rec,'a6','local','ที่ตั้งกรุงเทพมหานคร จึงต้องตรวจข้อบัญญัติกรุงเทพมหานครเรื่องควบคุมอาคารเพิ่มเติม');
+    smartAdd(rec,'b1','local','ที่ตั้งกรุงเทพมหานคร จึงต้องตรวจข้อกำหนดผังเมืองและการใช้ประโยชน์ที่ดินของพื้นที่');
+    warnings.push('เขต/แขวงและตำแหน่งแปลงจริงอาจทำให้มีกฎหมายพื้นที่เฉพาะ เขตการบิน หรือข้อกำหนดอื่นเพิ่ม');
+  } else {
+    warnings.push('ยังไม่ระบุข้อบัญญัติท้องถิ่นและผังเมืองของพื้นที่จริง ระบบจึงแสดงกฎหมายกลางเป็นหลัก');
+  }
+
+  if(road<=0) warnings.push('ยังไม่ได้กรอกความกว้างถนน จึงยังไม่สามารถชี้ประเด็นเรื่องถนน/ระยะร่นได้ละเอียดขึ้น');
+  warnings.push('Smart Check เป็นการคัด “กฎหมายที่ควรเปิดตรวจ” เบื้องต้น ไม่ใช่คำวินิจฉัยว่าอาคารผ่านหรือผิดกฎหมาย และยังมีเงื่อนไขอื่นที่ข้อมูล 5 ช่องนี้ไม่ครอบคลุม');
+
+  const order={core:1,direct:2,local:3,conditional:4};
+  const rows=[...rec.values()].sort((a,b)=>order[a.level]-order[b.level] || a.law.code.localeCompare(b.law.code,'th'));
+  const typeText=smartTypeNames[type]; const locText=smartLocationNames[location];
+  let summary=`${typeText}${height?` • สูง ${height.toLocaleString('th-TH')} ม.`:''}${area?` • ${area.toLocaleString('th-TH')} ตร.ม.`:''} • ${locText}`;
+  if(classification.length) summary += ` — ${classification.join(' / ')}`;
+  $('smartSummary').textContent=summary;
+  $('smartCount').textContent=`${rows.length} ฉบับ/ชุด`;
+  const levelLabel={core:'กฎหมายหลัก',direct:'เข้าเงื่อนไขเด่น',local:'กฎหมายพื้นที่',conditional:'ตรวจเพิ่มตามเงื่อนไข'};
+  $('smartLawList').innerHTML=rows.map(r=>`<article class="smart-law"><span class="smart-level ${r.level}">${levelLabel[r.level]}</span><div class="smart-law-top"><div><h3>${r.law.title}</h3><p>${r.reason}</p></div><button class="mini-open" type="button" data-smart-open="${r.law.id}">เปิดดู</button></div></article>`).join('');
+  $('smartWarnings').innerHTML=warnings.map(w=>`<div class="smart-warning">⚠️ ${w}</div>`).join('');
+  document.querySelectorAll('[data-smart-open]').forEach(b=>b.addEventListener('click',()=>openLaw(b.dataset.smartOpen)));
+  $('smartResults').classList.remove('hidden');
+  $('smartResults').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+$('smartAnalyze').addEventListener('click', analyzeSmart);
 
 $('searchInput').addEventListener('input',()=>{ favoritesOnly=false; renderLaws(); });
 $('clearSearch').addEventListener('click',()=>{ $('searchInput').value=''; activeCategory=null; activeGroup=null; favoritesOnly=false; render(); });

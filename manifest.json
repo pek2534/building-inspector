@@ -5,6 +5,6 @@
   "display": "standalone",
   "background_color": "#f2ede3",
   "theme_color": "#6f7754",
-  "description": "Building law and inspection reference for Thailand",
+  "description": "Building law reference with preliminary Smart Check for Thailand",
   "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]
 }
