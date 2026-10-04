@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#6f7754" />
+  <title>Building Inspector</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">BUILDING INSPECTOR</div>
+      <h1>กฎหมายตรวจอาคาร</h1>
+      <p>ค้นหา • เช็กหัวข้อ • เปิดต้นฉบับ</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-card">
+      <label for="searchInput">ค้นหาเรื่องที่ต้องตรวจ</label>
+      <div class="search-row">
+        <input id="searchInput" type="search" placeholder="เช่น ที่จอดรถ, อาคารชุด, โรงแรม..." autocomplete="off" />
+        <button id="clearSearch" class="ghost" type="button">ล้าง</button>
+      </div>
+      <div class="quick-tags" id="quickTags"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>หมวดตรวจ</h2>
+        <span id="resultCount"></span>
+      </div>
+      <div id="categoryGrid" class="category-grid"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>รายการกฎหมาย</h2>
+        <button id="showFavorites" class="ghost" type="button">☆ กฎหมายของฉัน</button>
+      </div>
+      <div id="lawList" class="law-list"></div>
+      <div id="emptyState" class="empty hidden">ไม่พบข้อมูลที่ตรงกับคำค้น</div>
+    </section>
+  </main>
+
+  <dialog id="lawDialog">
+    <form method="dialog" class="dialog-shell">
+      <div class="dialog-head">
+        <div>
+          <div id="dialogCategory" class="chip"></div>
+          <h3 id="dialogTitle"></h3>
+          <p id="dialogMeta" class="muted"></p>
+        </div>
+        <button class="icon-btn" value="cancel" aria-label="ปิด">×</button>
+      </div>
+      <div class="dialog-content">
+        <h4>สรุปสำหรับใช้งาน</h4>
+        <div id="dialogSummary" class="summary-box"></div>
+
+        <h4>หัวข้อที่เกี่ยวข้อง</h4>
+        <ul id="dialogTopics"></ul>
+
+        <h4>อ้างอิง</h4>
+        <div id="dialogRefs" class="refs"></div>
+
+        <div class="dialog-actions">
+          <button id="favoriteBtn" type="button" class="secondary">☆ เก็บไว้</button>
+          <a id="openPdfBtn" class="primary-link" href="#" target="_blank" rel="noopener">เปิด PDF ต้นฉบับ</a>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <footer>Building Inspector v0.1 • Prototype</footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
