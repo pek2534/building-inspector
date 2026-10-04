@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#6f7754" />
+  <meta name="description" content="Building law and inspection reference for Thailand" />
   <title>Building Inspector</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
@@ -11,18 +12,29 @@
 </head>
 <body>
   <header class="topbar">
-    <div>
-      <div class="eyebrow">BUILDING INSPECTOR</div>
-      <h1>กฎหมายตรวจอาคาร</h1>
-      <p>ค้นหา • เช็กหัวข้อ • เปิดต้นฉบับ</p>
+    <div class="topbar-inner">
+      <div>
+        <div class="eyebrow">BUILDING INSPECTOR</div>
+        <h1>กฎหมายตรวจอาคาร</h1>
+        <p>ค้นเรื่องที่ต้องตรวจ → ดูกฎหมายที่เกี่ยวข้อง → เปิด PDF ต้นฉบับ/ฉบับรวม</p>
+      </div>
+      <div class="version-pill">v0.2</div>
     </div>
   </header>
 
   <main>
+    <section class="notice-card" aria-label="คำเตือนการใช้งาน">
+      <div class="notice-icon">⚖️</div>
+      <div>
+        <strong>ใช้เป็นเครื่องมือค้นอ้างอิง</strong>
+        <p>ก่อนใช้ออกคำสั่งหรือวินิจฉัยงานราชการ ให้ตรวจข้อความกฎหมายต้นฉบับและฉบับแก้ไขที่ใช้บังคับอีกครั้ง</p>
+      </div>
+    </section>
+
     <section class="search-card">
       <label for="searchInput">ค้นหาเรื่องที่ต้องตรวจ</label>
       <div class="search-row">
-        <input id="searchInput" type="search" placeholder="เช่น ที่จอดรถ, อาคารชุด, โรงแรม..." autocomplete="off" />
+        <input id="searchInput" type="search" placeholder="เช่น ระยะร่น, ช่องเปิด, อัคคีภัย, ที่จอดรถ..." autocomplete="off" />
         <button id="clearSearch" class="ghost" type="button">ล้าง</button>
       </div>
       <div class="quick-tags" id="quickTags"></div>
@@ -30,19 +42,32 @@
 
     <section>
       <div class="section-head">
-        <h2>หมวดตรวจ</h2>
+        <div>
+          <h2>หมวดตรวจ</h2>
+          <p>แตะหมวดเพื่อกรองกฎหมาย</p>
+        </div>
         <span id="resultCount"></span>
       </div>
       <div id="categoryGrid" class="category-grid"></div>
     </section>
 
     <section>
-      <div class="section-head">
-        <h2>รายการกฎหมาย</h2>
+      <div class="section-head list-head">
+        <div>
+          <h2>ฐานกฎหมาย</h2>
+          <p id="filterLabel">แสดงทั้งหมด</p>
+        </div>
         <button id="showFavorites" class="ghost" type="button">☆ กฎหมายของฉัน</button>
       </div>
       <div id="lawList" class="law-list"></div>
       <div id="emptyState" class="empty hidden">ไม่พบข้อมูลที่ตรงกับคำค้น</div>
+    </section>
+
+    <section class="source-card">
+      <h2>แหล่งอ้างอิงชุดเริ่มต้น</h2>
+      <p>กฎหมายกลางใน v0.2 จัดหมวดจากสารบัญ “กฎหมายใช้บ่อย” ของสมาคมสถาปนิกสยามฯ และลิงก์ไป PDF ที่ ASA เผยแพร่ ส่วนกฎหมายท้องถิ่นนนทบุรีใช้ PDF ที่บันทึกไว้ในระบบ</p>
+      <a class="text-link" href="https://download.asa.or.th/03media/04law/fubr/Content_240116.pdf" target="_blank" rel="noopener">เปิดสารบัญกฎหมายใช้บ่อยของ ASA ↗</a>
+      <small>ตรวจสอบลิงก์ชุดนี้ล่าสุด: 4 ต.ค. 2569</small>
     </section>
   </main>
 
@@ -50,31 +75,38 @@
     <form method="dialog" class="dialog-shell">
       <div class="dialog-head">
         <div>
-          <div id="dialogCategory" class="chip"></div>
+          <div id="dialogBadges" class="badge-row"></div>
           <h3 id="dialogTitle"></h3>
           <p id="dialogMeta" class="muted"></p>
         </div>
         <button class="icon-btn" value="cancel" aria-label="ปิด">×</button>
       </div>
       <div class="dialog-content">
-        <h4>สรุปสำหรับใช้งาน</h4>
+        <h4>ใช้ค้นเรื่องอะไรได้บ้าง</h4>
         <div id="dialogSummary" class="summary-box"></div>
 
-        <h4>หัวข้อที่เกี่ยวข้อง</h4>
-        <ul id="dialogTopics"></ul>
+        <h4>หัวข้อสำคัญ</h4>
+        <ul id="dialogTopics" class="topic-list"></ul>
 
-        <h4>อ้างอิง</h4>
+        <h4>ฉบับ / การแก้ไขที่ควรรู้</h4>
         <div id="dialogRefs" class="refs"></div>
+
+        <h4>เอกสาร</h4>
+        <div id="dialogSources" class="source-links"></div>
+
+        <div class="dialog-warning">
+          <strong>หมายเหตุ</strong>
+          <span id="dialogNote"></span>
+        </div>
 
         <div class="dialog-actions">
           <button id="favoriteBtn" type="button" class="secondary">☆ เก็บไว้</button>
-          <a id="openPdfBtn" class="primary-link" href="#" target="_blank" rel="noopener">เปิด PDF ต้นฉบับ</a>
         </div>
       </div>
     </form>
   </dialog>
 
-  <footer>Building Inspector v0.1 • Prototype</footer>
+  <footer>Building Inspector v0.2 • Law reference prototype</footer>
 
   <script src="script.js" defer></script>
 </body>
