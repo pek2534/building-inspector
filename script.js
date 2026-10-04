@@ -29,7 +29,7 @@ const laws = [
   makeLaw({id:'a5',group:'A',code:'A5',title:'กฎกระทรวง ฉบับที่ 41 (พ.ศ. 2537)',categories:['parking'],summary:'ที่จอดรถ อาคารจอดรถ ระบบยกรถขึ้นลงระหว่างชั้นด้วยลิฟต์ และระบบเคลื่อนย้ายรถด้วยเครื่องจักรกล',topics:['ขนาด/ลักษณะที่จอดรถ','อาคารจอดรถ','ลิฟต์รถ','ระบบเคลื่อนย้ายรถ'],keywords:['ขนาดที่จอดรถ','อาคารจอดรถ','ลิฟต์รถ'],sources:[direct('เปิดกฎกระทรวง ฉบับที่ 41 (ASA)','https://download.asa.or.th/03media/04law/cba/mr37-41.pdf')]}),
   makeLaw({id:'a6',group:'A',code:'A6',title:'ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมอาคาร พ.ศ. 2544',categories:['design','permit'],jurisdiction:'🏙️ กรุงเทพมหานครเท่านั้น',summary:'ข้อบัญญัติท้องถิ่นกรุงเทพมหานครว่าด้วยการควบคุมอาคาร',topics:['ข้อกำหนดอาคารในกรุงเทพมหานคร','นิยามและมาตรฐานท้องถิ่น','การอนุญาตและควบคุมอาคาร'],keywords:['ข้อบัญญัติ กทม','กรุงเทพมหานคร'],sources:[direct('เปิดข้อบัญญัติ กทม. พ.ศ. 2544 (ASA)','https://download.asa.or.th/03media/04law/cba/bb/bb44-03.pdf')]}),
   makeLaw({id:'a7',group:'A',code:'A7',title:'กฎกระทรวงสิ่งอำนวยความสะดวกในอาคารสำหรับผู้พิการหรือทุพพลภาพและคนชรา พ.ศ. 2548 และฉบับที่ 2 พ.ศ. 2564',categories:['accessibility'],summary:'สิ่งอำนวยความสะดวกในอาคารสำหรับผู้พิการหรือทุพพลภาพและคนชรา',topics:['ทางลาด','ลิฟต์','ห้องน้ำ','ที่จอดรถผู้พิการ','ทางเข้าและป้าย'],keywords:['ผู้พิการ','คนชรา','ทางลาด','ห้องน้ำผู้พิการ'],sources:[direct('เปิดฉบับหลัก พ.ศ. 2548 (ASA)','https://download.asa.or.th/03media/04law/cba/mr/mr48-58e.pdf'),direct('เปิดฉบับที่ 2 พ.ศ. 2564 (ASA)','https://download.asa.or.th/03media/04law/fubr/a7_bcmr58e-64.pdf')]}),
-  makeLaw({id:'a8',group:'A',code:'A8',title:'กฎกระทรวงว่าด้วยการขออนุญาตให้ใช้อาคารเพื่อประกอบกิจการโรงมหรสพ ประเภทและระบบความปลอดภัยของโรงมหรสพ และอัตราค่าธรรมเนียม พ.ศ. 2550',categories:['special','permit','fire'],topics:['การขออนุญาตใช้เป็นโรงมหรสพ','ประเภทโรงมหรสพ','ระบบความปลอดภัย','ค่าธรรมเนียม'],keywords:['โรงมหรสพ','โรงภาพยนตร์','อนุญาตใช้อาคาร']}),
+  makeLaw({id:'a8',group:'A',code:'A8',title:'กฎกระทรวงว่าด้วยการขออนุญาตให้ใช้อาคารเพื่อประกอบกิจการโรงมหรสพ ประเภทและระบบความปลอดภัยของโรงมหรสพ และอัตราค่าธรรมเนียม พ.ศ. 2550',categories:['special','permit','fire'],topics:['การขออนุญาตใช้เป็นโรงมหรสพ','ประเภทโรงมหรสพ','ระบบความปลอดภัย','ค่าธรรมเนียม'],keywords:['โรงมหรสพ','โรงภาพยนตร์','อนุญาตใช้อาคาร'],sources:[{label:'เปิดกฎหมายโรงมหรสพ พ.ศ. 2550 ฉบับเต็ม',url:'https://lawplayer.com/th/act/pythainlp_8f4f3fb29429eecf',kind:'ตัวบทเฉพาะฉบับ'}]}),
   makeLaw({id:'a9',group:'A',code:'A9',title:'กฎกระทรวงกำหนดประเภทและระบบความปลอดภัยของอาคารที่ใช้เพื่อประกอบกิจการเป็นสถานบริการ พ.ศ. 2555',categories:['special','fire'],topics:['สถานบริการ','ระบบความปลอดภัย','อัคคีภัย'],keywords:['สถานบริการ','ผับ','ระบบความปลอดภัย'],sources:[direct('เปิดกฎกระทรวงสถานบริการ พ.ศ. 2555 (ASA)','https://download.asa.or.th/03media/04law/cba/mr/mr55-63f.pdf')]}),
   makeLaw({id:'a10',group:'A',code:'A10',title:'กฎกระทรวงกำหนดวัสดุที่ใช้ในการก่อสร้างอาคารประเภทควบคุมการใช้ พ.ศ. 2566',categories:['structure','special'],topics:['วัสดุก่อสร้าง','อาคารประเภทควบคุมการใช้','วัสดุตกแต่งภายใน'],keywords:['วัสดุ','ควบคุมการใช้'],sources:[direct('เปิดกฎกระทรวงวัสดุ พ.ศ. 2566 (ASA)','https://download.asa.or.th/03media/04law/fubr/a10_bcmr70f-66.pdf')]}),
   makeLaw({id:'a10-2',group:'A',code:'A10.2',title:'กฎกระทรวงกำหนดฐานรากของอาคารและพื้นดินที่รองรับอาคาร พ.ศ. 2566',categories:['structure'],topics:['ฐานราก','พื้นดินรองรับอาคาร','ความมั่นคงแข็งแรง'],keywords:['ฐานราก','ดิน','เสาเข็ม'],sources:[direct('เปิดกฎกระทรวงฐานราก พ.ศ. 2566 (ASA)','https://download.asa.or.th/03media/04law/fubr/a10.2_bcmr70g-66.pdf')]}),
@@ -40,24 +40,24 @@ const laws = [
 
   makeLaw({id:'b1',group:'B',code:'B1',title:'แผนผังกำหนดการใช้ประโยชน์ที่ดิน ผังเมืองรวมกรุงเทพมหานคร พ.ศ. 2556 และตารางสรุปข้อกำหนดการใช้ประโยชน์ที่ดิน',categories:['planning'],jurisdiction:'🏙️ กรุงเทพมหานครเท่านั้น',topics:['การใช้ประโยชน์ที่ดิน','ผังสี','ข้อกำหนดผังเมือง'],keywords:['ผังเมือง','ผังสี','FAR','OSR'],sources:[direct('เปิดผังเมืองรวมกรุงเทพมหานคร (ASA)','https://download.asa.or.th/03media/04law/cpa/mr56-bma-full.pdf')]}),
   makeLaw({id:'b2',group:'B',code:'B2',title:'ข้อกำหนดเกี่ยวกับการจัดสรรที่ดินเพื่อที่อยู่อาศัยและพาณิชยกรรมกรุงเทพมหานคร พ.ศ. 2565',categories:['land','planning'],jurisdiction:'🏙️ กรุงเทพมหานครเท่านั้น',topics:['จัดสรรที่ดิน','แผนผังโครงการ','ที่อยู่อาศัยและพาณิชยกรรม'],keywords:['จัดสรรที่ดิน','หมู่บ้านจัดสรร'],sources:[direct('เปิดข้อกำหนดจัดสรรที่ดิน กทม. (ASA)','https://download.asa.or.th/03media/04law/fubr/b2_lsbma-65.pdf')]}),
-  makeLaw({id:'b3',group:'B',code:'B3',title:'ประกาศกระทรวงคมนาคม เรื่องกำหนดเขตบริเวณใกล้เคียงสนามบินดอนเมือง กรุงเทพมหานคร เป็นเขตปลอดภัยในการเดินอากาศ พ.ศ. 2540',categories:['aviation','planning'],jurisdiction:'🏙️ พื้นที่เกี่ยวข้องใกล้สนามบินดอนเมือง',topics:['เขตปลอดภัยการบิน','ความสูงอาคาร','บริเวณใกล้สนามบินดอนเมือง'],keywords:['สนามบินดอนเมือง','การบิน','ความสูง']}),
-  makeLaw({id:'b4',group:'B',code:'B4',title:'ประกาศกระทรวงคมนาคม เรื่องกำหนดเขตบริเวณใกล้เคียงสนามบินสุวรรณภูมิเป็นเขตปลอดภัยในการเดินอากาศ พ.ศ. 2551',categories:['aviation','planning'],jurisdiction:'📍 พื้นที่เกี่ยวข้องใกล้สนามบินสุวรรณภูมิ',topics:['เขตปลอดภัยการบิน','ความสูงอาคาร','บริเวณใกล้สนามบินสุวรรณภูมิ'],keywords:['สนามบินสุวรรณภูมิ','การบิน','ความสูง']}),
-  makeLaw({id:'b5',group:'B',code:'B5',title:'ตารางประเภทและขนาดของโครงการ กิจการ หรือการดำเนินการซึ่งต้องจัดทำ และขั้นตอนในการเสนอรายงานการประเมินผลกระทบสิ่งแวดล้อม (บางส่วน)',categories:['environment','planning'],topics:['EIA','ประเภท/ขนาดโครงการ','ขั้นตอนเสนอรายงาน'],keywords:['EIA','สิ่งแวดล้อม','ผลกระทบสิ่งแวดล้อม'],sources:fallbackSources()}),
+  makeLaw({id:'b3',group:'B',code:'B3',title:'ประกาศกระทรวงคมนาคม เรื่องกำหนดเขตบริเวณใกล้เคียงสนามบินดอนเมือง กรุงเทพมหานคร เป็นเขตปลอดภัยในการเดินอากาศ พ.ศ. 2540',categories:['aviation','planning'],jurisdiction:'🏙️ พื้นที่เกี่ยวข้องใกล้สนามบินดอนเมือง',topics:['เขตปลอดภัยการบิน','ความสูงอาคาร','บริเวณใกล้สนามบินดอนเมือง'],keywords:['สนามบินดอนเมือง','การบิน','ความสูง'],sources:[{label:'เปิดประกาศเขตปลอดภัยสนามบินดอนเมือง (CAAT PDF)',url:'https://www.caat.or.th/wp-content/uploads/2019/03/%E0%B8%AA%E0%B8%99%E0%B8%B2%E0%B8%A1%E0%B8%9A%E0%B8%B4%E0%B8%99%E0%B8%94%E0%B8%AD%E0%B8%99%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87.pdf',kind:'เอกสารทางการ PDF'}]}),
+  makeLaw({id:'b4',group:'B',code:'B4',title:'ประกาศกระทรวงคมนาคม เรื่องกำหนดเขตบริเวณใกล้เคียงสนามบินสุวรรณภูมิเป็นเขตปลอดภัยในการเดินอากาศ พ.ศ. 2551',categories:['aviation','planning'],jurisdiction:'📍 พื้นที่เกี่ยวข้องใกล้สนามบินสุวรรณภูมิ',topics:['เขตปลอดภัยการบิน','ความสูงอาคาร','บริเวณใกล้สนามบินสุวรรณภูมิ'],keywords:['สนามบินสุวรรณภูมิ','การบิน','ความสูง'],sources:[{label:'เปิดราชกิจจานุเบกษาเขตปลอดภัยสนามบินสุวรรณภูมิ',url:'https://ratchakitcha.soc.go.th/documents/240118.pdf',kind:'ราชกิจจานุเบกษา PDF'}]}),
+  makeLaw({id:'b5',group:'B',code:'B5',title:'ตารางประเภทและขนาดของโครงการ กิจการ หรือการดำเนินการซึ่งต้องจัดทำ และขั้นตอนในการเสนอรายงานการประเมินผลกระทบสิ่งแวดล้อม (บางส่วน)',categories:['environment','planning'],topics:['EIA','ประเภท/ขนาดโครงการ','ขั้นตอนเสนอรายงาน'],keywords:['EIA','สิ่งแวดล้อม','ผลกระทบสิ่งแวดล้อม'],sources:[direct('เปิดตารางเกณฑ์ EIA ที่ ASA รวบรวม','https://download.asa.or.th/03media/04law/fubr/b5_eqma-66t.pdf')]}),
   makeLaw({id:'b6',group:'B',code:'B6',title:'กฎกระทรวงกำหนดประเภท หรือขนาดของอาคาร และมาตรฐาน หลักเกณฑ์ และวิธีการในการออกแบบอาคารเพื่อการอนุรักษ์พลังงาน พ.ศ. 2563',categories:['energy','design'],topics:['อาคารเพื่อการอนุรักษ์พลังงาน','ประเภทและขนาดอาคาร','เปลือกอาคาร','ระบบอาคาร'],keywords:['BEC','OTTV','RTTV','พลังงาน'],sources:[direct('เปิดกฎกระทรวง BEC พ.ศ. 2563 (ASA)','https://download.asa.or.th/03media/04law/fubr/b6_ecmr-63.pdf')]}),
   makeLaw({id:'b7',group:'B',code:'B7',title:'ประกาศกระทรวงพลังงาน เรื่องกำหนดค่ามาตรฐานการออกแบบอาคารเพื่อการอนุรักษ์พลังงาน พ.ศ. 2564',categories:['energy','design'],topics:['ค่ามาตรฐาน BEC','ระบบเปลือกอาคาร','ค่ามาตรฐานการออกแบบ'],keywords:['BEC','OTTV','RTTV','U-value','SHGC'],sources:[direct('เปิดประกาศค่ามาตรฐาน BEC พ.ศ. 2564 (ASA)','https://download.asa.or.th/03media/04law/fubr/b7_ecma64.pdf')]}),
 
-  makeLaw({id:'c1',group:'C',code:'C1',title:'กฎกระทรวงกำหนดสิ่งที่สร้างขึ้นอย่างอื่นเป็นอาคารตามกฎหมายว่าด้วยการควบคุมอาคาร พ.ศ. 2544',categories:['permit','special'],topics:['สิ่งที่ถือเป็นอาคาร','สิ่งปลูกสร้างที่อยู่ในบังคับ'],keywords:['อะไรถือเป็นอาคาร','สิ่งปลูกสร้าง']}),
+  makeLaw({id:'c1',group:'C',code:'C1',title:'กฎกระทรวงกำหนดสิ่งที่สร้างขึ้นอย่างอื่นเป็นอาคารตามกฎหมายว่าด้วยการควบคุมอาคาร พ.ศ. 2544',categories:['permit','special'],topics:['สิ่งที่ถือเป็นอาคาร','สิ่งปลูกสร้างที่อยู่ในบังคับ'],keywords:['อะไรถือเป็นอาคาร','สิ่งปลูกสร้าง'],sources:[{label:'เปิดกฎกระทรวง พ.ศ. 2544 ฉบับเฉพาะ',url:'https://www.chaiprakarn.go.th/index/load_data/?doc=14010',kind:'เอกสารหน่วยงานรัฐ'}]}),
   makeLaw({id:'c2',group:'C',code:'C2',title:'กฎกระทรวงกำหนดอาคารประเภทควบคุมการใช้ พ.ศ. 2552',categories:['permit','special'],topics:['อาคารประเภทควบคุมการใช้','การใช้อาคาร','ประเภทกิจการ'],keywords:['อาคารควบคุมการใช้','อ.6','ใบรับรอง'],sources:[direct('เปิดกฎกระทรวงอาคารควบคุมการใช้ พ.ศ. 2552 (ASA)','https://download.asa.or.th/03media/04law/cba/mr/mr52-63b.pdf')]}),
   makeLaw({id:'c3',group:'C',code:'C3',title:'กฎกระทรวงกำหนดหลักเกณฑ์ วิธีการ และเงื่อนไขในการขออนุญาต การอนุญาต การต่ออายุใบอนุญาต การโอนใบอนุญาต การออกใบรับรอง และการออกใบแทนตามกฎหมายว่าด้วยการควบคุมอาคาร พ.ศ. 2564',categories:['permit'],topics:['ขออนุญาตก่อสร้าง/ดัดแปลง/รื้อถอน/เคลื่อนย้าย','เอกสารคำขอ','ต่ออายุ','โอนใบอนุญาต','ใบรับรอง/ใบแทน'],keywords:['ขออนุญาต','ข.1','อ.1','อ.5','อ.6','ต่ออายุ','โอนใบอนุญาต','เอกสาร'],sources:[direct('เปิดกฎกระทรวงการขออนุญาต พ.ศ. 2564 (ASA)','https://download.asa.or.th/03media/04law/cba/mr/mr64-68e.pdf')]}),
   makeLaw({id:'c4',group:'C',code:'C4',title:'กฎกระทรวง ฉบับที่ 11 (พ.ศ. 2528) และฉบับแก้ไข',categories:['alteration','demolition'],summary:'การกระทำที่ไม่ถือเป็นการดัดแปลงอาคาร และการรื้อส่วนอื่นของโครงสร้างของอาคารที่ถือเป็นการรื้อถอนอาคาร',topics:['ไม่ถือเป็นการดัดแปลง','เกณฑ์การรื้อถอน','การเปลี่ยนโครงสร้าง'],keywords:['ไม่ต้องขอ','ดัดแปลง','ต่อเติม','รื้อถอน'],refs:['แก้ไขโดยกฎกระทรวง ฉบับที่ 65 (พ.ศ. 2558)'],sources:[direct('เปิดฉบับรวม 11 + แก้ไข (ASA)','https://download.asa.or.th/03media/04law/cba/mr/mr28-11-upd65.pdf')]}),
-  makeLaw({id:'c5',group:'C',code:'C5',title:'กฎกระทรวงว่าด้วยการยกเว้น ผ่อนผัน หรือกำหนดเงื่อนไขในการปฏิบัติตามกฎหมายว่าด้วยการควบคุมอาคาร พ.ศ. 2550',categories:['permit','special'],topics:['ยกเว้น','ผ่อนผัน','เงื่อนไขการปฏิบัติตามกฎหมาย'],keywords:['ยกเว้น','ผ่อนผัน']}),
-  makeLaw({id:'c6',group:'C',code:'C6',title:'กฎกระทรวงกำหนดชนิดหรือประเภทของอาคาร หลักเกณฑ์ วิธีการ และเงื่อนไขในการตรวจสอบงานออกแบบและคำนวณส่วนต่าง ๆ ของโครงสร้างอาคาร พ.ศ. 2550',categories:['structure','permit'],topics:['ตรวจสอบงานออกแบบ','ตรวจรายการคำนวณ','ประเภทอาคารที่ต้องตรวจ'],keywords:['ตรวจแบบ','รายการคำนวณ','โครงสร้าง']}),
+  makeLaw({id:'c5',group:'C',code:'C5',title:'กฎกระทรวงว่าด้วยการยกเว้น ผ่อนผัน หรือกำหนดเงื่อนไขในการปฏิบัติตามกฎหมายว่าด้วยการควบคุมอาคาร พ.ศ. 2550',categories:['permit','special'],topics:['ยกเว้น','ผ่อนผัน','เงื่อนไขการปฏิบัติตามกฎหมาย'],keywords:['ยกเว้น','ผ่อนผัน'],sources:[{label:'เปิดกฎกระทรวงยกเว้น/ผ่อนผัน พ.ศ. 2550 ฉบับเต็ม',url:'https://lawplayer.com/th/act/pythainlp_cbad43a2bd4f551c',kind:'ตัวบทเฉพาะฉบับ'}]}),
+  makeLaw({id:'c6',group:'C',code:'C6',title:'กฎกระทรวงกำหนดชนิดหรือประเภทของอาคาร หลักเกณฑ์ วิธีการ และเงื่อนไขในการตรวจสอบงานออกแบบและคำนวณส่วนต่าง ๆ ของโครงสร้างอาคาร พ.ศ. 2550',categories:['structure','permit'],topics:['ตรวจสอบงานออกแบบ','ตรวจรายการคำนวณ','ประเภทอาคารที่ต้องตรวจ'],keywords:['ตรวจแบบ','รายการคำนวณ','โครงสร้าง'],sources:[{label:'เปิดกฎกระทรวงตรวจสอบงานออกแบบและคำนวณ พ.ศ. 2550',url:'https://www.rim.go.th/editor5/source/1/2/6/7/93W.pdf',kind:'เอกสารทางการ PDF'}]}),
   makeLaw({id:'c7',group:'C',code:'C7',title:'กฎกระทรวงกำหนดหลักเกณฑ์การอนุญาตดัดแปลงอาคารเพื่อเสริมความมั่นคงแข็งแรงของอาคารให้สามารถต้านแรงสั่นสะเทือนจากแผ่นดินไหว พ.ศ. 2555',categories:['alteration','structure','permit'],topics:['ดัดแปลงเพื่อเสริมความมั่นคง','แผ่นดินไหว','การอนุญาต'],keywords:['เสริมอาคาร','แผ่นดินไหว','ดัดแปลง'],sources:[direct('เปิดกฎกระทรวงดัดแปลงเสริมแผ่นดินไหว พ.ศ. 2555 (ASA)','https://download.asa.or.th/03media/04law/cba/mr/mr55-64a.pdf')]}),
-  makeLaw({id:'c8',group:'C',code:'C8',title:'กฎกระทรวง ฉบับที่ 4 (พ.ศ. 2526) และฉบับแก้ไข',categories:['permit','alteration','demolition'],summary:'หลักเกณฑ์ วิธีการ และเงื่อนไขในการก่อสร้าง ดัดแปลง รื้อถอน เคลื่อนย้าย ใช้หรือเปลี่ยนการใช้อาคาร',topics:['ก่อสร้าง','ดัดแปลง','รื้อถอน','เคลื่อนย้าย','ใช้/เปลี่ยนการใช้'],keywords:['ก่อสร้าง','เปลี่ยนการใช้','เคลื่อนย้าย'],refs:['แก้ไขโดยกฎกระทรวง ฉบับที่ 67 (พ.ศ. 2563)']}),
-  makeLaw({id:'c9',group:'C',code:'C9',title:'กฎกระทรวง ฉบับที่ 12 (พ.ศ. 2528)',categories:['permit','alteration'],summary:'วิธีการหรือเงื่อนไขให้กระทำผิดไปจากแบบที่ได้รับอนุญาต',topics:['ทำผิดจากแบบ','เปลี่ยนแปลงแบบที่อนุญาต','เงื่อนไขการดำเนินการ'],keywords:['ผิดแบบ','เปลี่ยนแบบ','แก้แบบ']}),
-  makeLaw({id:'c10',group:'C',code:'C10',title:'ประกาศกรุงเทพมหานคร ที่ ป. 281/2535 เรื่องคำแนะนำในการขอรับใบอนุญาตก่อสร้าง ดัดแปลง รื้อถอน หรือเคลื่อนย้ายอาคาร และการแจ้งโดยไม่ยื่นคำขอรับใบอนุญาต',categories:['permit'],jurisdiction:'🏙️ กรุงเทพมหานครเท่านั้น',topics:['คำแนะนำขออนุญาต','ก่อสร้าง/ดัดแปลง/รื้อถอน/เคลื่อนย้าย','การแจ้งโดยไม่ยื่นคำขอ'],keywords:['ขออนุญาต กทม','39 ทวิ กทม']}),
-  makeLaw({id:'c11',group:'C',code:'C11',title:'ระเบียบกรุงเทพมหานครว่าด้วยการขออนุญาตตัดคันหินทางเท้า ลดระดับคันหินทางเท้า และทำทางเชื่อมในที่สาธารณะ พ.ศ. 2531',categories:['permit','road'],jurisdiction:'🏙️ กรุงเทพมหานครเท่านั้น',topics:['ตัดคันหิน','ลดระดับคันหิน','ทางเชื่อม','ที่สาธารณะ'],keywords:['คันหิน','ทางเท้า','ทางเชื่อม']}),
-  makeLaw({id:'c12',group:'C',code:'C12',title:'ระเบียบกรุงเทพมหานครว่าด้วยการขออนุญาตก่อสร้างสะพานข้ามคลอง พ.ศ. 2549',categories:['permit','road'],jurisdiction:'🏙️ กรุงเทพมหานครเท่านั้น',topics:['สะพานข้ามคลอง','การขออนุญาต','ทางเชื่อม'],keywords:['สะพานข้ามคลอง','คลอง']}),
+  makeLaw({id:'c8',group:'C',code:'C8',title:'กฎกระทรวง ฉบับที่ 4 (พ.ศ. 2526) และฉบับแก้ไข',categories:['permit','alteration','demolition'],summary:'หลักเกณฑ์ วิธีการ และเงื่อนไขในการก่อสร้าง ดัดแปลง รื้อถอน เคลื่อนย้าย ใช้หรือเปลี่ยนการใช้อาคาร',topics:['ก่อสร้าง','ดัดแปลง','รื้อถอน','เคลื่อนย้าย','ใช้/เปลี่ยนการใช้'],keywords:['ก่อสร้าง','เปลี่ยนการใช้','เคลื่อนย้าย'],refs:['แก้ไขโดยกฎกระทรวง ฉบับที่ 67 (พ.ศ. 2563)'],sources:[direct('เปิดกฎกระทรวง ฉบับที่ 4 และฉบับแก้ไข','https://download.asa.or.th/03media/04law/fubr/c8_bcmr4-63.pdf')]}),
+  makeLaw({id:'c9',group:'C',code:'C9',title:'กฎกระทรวง ฉบับที่ 12 (พ.ศ. 2528)',categories:['permit','alteration'],summary:'วิธีการหรือเงื่อนไขให้กระทำผิดไปจากแบบที่ได้รับอนุญาต',topics:['ทำผิดจากแบบ','เปลี่ยนแปลงแบบที่อนุญาต','เงื่อนไขการดำเนินการ'],keywords:['ผิดแบบ','เปลี่ยนแบบ','แก้แบบ'],sources:[direct('เปิดกฎกระทรวง ฉบับที่ 12 (พ.ศ. 2528)','https://download.asa.or.th/03media/04law/cba/mr/mr28-12.pdf')]}),
+  makeLaw({id:'c10',group:'C',code:'C10',title:'ประกาศกรุงเทพมหานคร ที่ ป. 281/2535 เรื่องคำแนะนำในการขอรับใบอนุญาตก่อสร้าง ดัดแปลง รื้อถอน หรือเคลื่อนย้ายอาคาร และการแจ้งโดยไม่ยื่นคำขอรับใบอนุญาต',categories:['permit'],jurisdiction:'🏙️ กรุงเทพมหานครเท่านั้น',topics:['คำแนะนำขออนุญาต','ก่อสร้าง/ดัดแปลง/รื้อถอน/เคลื่อนย้าย','การแจ้งโดยไม่ยื่นคำขอ'],keywords:['ขออนุญาต กทม','39 ทวิ กทม'],sources:[{label:'เปิดประกาศ กทม. ป.281/2535 โดยตรง',url:'https://download.asa.or.th/03media/04law/cba/bm/ba35-281.pdf',kind:'เอกสารเฉพาะฉบับ PDF'}]}),
+  makeLaw({id:'c11',group:'C',code:'C11',title:'ระเบียบกรุงเทพมหานครว่าด้วยการขออนุญาตตัดคันหินทางเท้า ลดระดับคันหินทางเท้า และทำทางเชื่อมในที่สาธารณะ พ.ศ. 2531',categories:['permit','road'],jurisdiction:'🏙️ กรุงเทพมหานครเท่านั้น',topics:['ตัดคันหิน','ลดระดับคันหิน','ทางเชื่อม','ที่สาธารณะ'],keywords:['คันหิน','ทางเท้า','ทางเชื่อม'],sources:[{label:'เปิดระเบียบตัดคันหิน/ทางเชื่อม พ.ศ. 2531 โดยตรง',url:'https://download.asa.or.th/03media/04law/bmaa/bo31.pdf',kind:'เอกสารเฉพาะฉบับ PDF'}]}),
+  makeLaw({id:'c12',group:'C',code:'C12',title:'ระเบียบกรุงเทพมหานครว่าด้วยการขออนุญาตก่อสร้างสะพานข้ามคลอง พ.ศ. 2549',categories:['permit','road'],jurisdiction:'🏙️ กรุงเทพมหานครเท่านั้น',topics:['สะพานข้ามคลอง','การขออนุญาต','ทางเชื่อม'],keywords:['สะพานข้ามคลอง','คลอง'],sources:[{label:'เปิดระเบียบสะพานข้ามคลอง พ.ศ. 2549 ฉบับเต็ม',url:'https://lawplayer.com/th/act/pythainlp_09845c7dfc2f849f',kind:'ตัวบทเฉพาะฉบับ'}]}),
 
   makeLaw({id:'nonthaburi-parking-2560',group:'LOCAL',code:'นนทบุรี',title:'เทศบัญญัติเทศบาลนครนนทบุรี เรื่องกำหนดจำนวนที่จอดรถยนต์ของอาคารบางชนิดหรือบางประเภท ลักษณะและขนาดที่จอดรถยนต์ ที่กลับรถยนต์ และทางเข้าออกของรถยนต์ พ.ศ. 2560',categories:['parking','local'],jurisdiction:'📍 เทศบาลนครนนทบุรี',summary:'ข้อบัญญัติท้องถิ่นเรื่องประเภทอาคาร จำนวนที่จอดรถ และการอ้างอิงลักษณะ/ขนาดที่จอดรถในเขตเทศบาลนครนนทบุรี',topics:['อาคารที่ต้องมีที่จอดรถ','จำนวนที่จอดรถ','อาคารชุด','โรงแรม','อาคารอยู่อาศัยรวม','อาคารขนาดใหญ่'],keywords:['เทศบัญญัตินนทบุรี','ที่จอดรถนนทบุรี'],refs:['ใช้บังคับในเขตเทศบาลนครนนทบุรี','ลักษณะและขนาดอ้างอิงกฎกระทรวง ฉบับที่ 7 และ 41'],sources:[{label:'เปิด PDF เทศบัญญัติในระบบ',url:'docs/nonthaburi-parking-2560.pdf',kind:'Local PDF'}]})
 ];
@@ -115,10 +115,11 @@ function renderCategories(){
 }
 function searchableText(l){ return [l.title,l.code,l.group,l.jurisdiction,l.summary,...l.keywords,...l.topics,...l.refs,...l.badges].join(' ').toLowerCase(); }
 function filteredLaws(){ const q=$('searchInput').value.trim().toLowerCase(); return laws.filter(l=>(!q||searchableText(l).includes(q))&&(!activeCategory||lawMatchesCategory(l,activeCategory))&&(!activeGroup||l.group===activeGroup)&&(!favoritesOnly||isFavorite(l.id))); }
+function primarySource(law){ return (law.sources||[]).find(src=>src?.url) || null; }
 function renderLaws(){
   const list=filteredLaws(); $('resultCount').textContent=`${list.length} รายการ`; $('emptyState').classList.toggle('hidden',list.length>0);
   const cat=categories.find(c=>c.id===activeCategory); const grp=groups.find(g=>g.id===activeGroup); const q=$('searchInput').value.trim(); let label='แสดงทั้งหมด'; if(favoritesOnly)label='เฉพาะกฎหมายของฉัน'; else { const bits=[]; if(grp&&grp.id)bits.push(grp.label); if(cat)bits.push(`${cat.icon} ${cat.name}`); if(bits.length)label=bits.join(' • '); } if(q) label += ` • ค้นหา “${q}”`; $('filterLabel').textContent=label;
-  $('lawList').innerHTML=list.map(l=>`<article class="law-card"><div class="badge-row">${l.badges.slice(0,3).map(b=>`<span class="chip">${b}</span>`).join('')}</div><h3>${l.title}</h3><p>${l.jurisdiction}</p><div class="topic-preview">${l.topics.slice(0,3).map(t=>`<span>${t}</span>`).join('')}</div><div class="law-actions"><button class="star" data-star="${l.id}" aria-label="รายการโปรด">${isFavorite(l.id)?'★':'☆'}</button><button class="open" data-open="${l.id}">ดูรายละเอียด</button></div></article>`).join('');
+  $('lawList').innerHTML=list.map(l=>{const src=primarySource(l);return `<article class="law-card"><div class="badge-row">${l.badges.slice(0,3).map(b=>`<span class="chip">${b}</span>`).join('')}</div><h3>${l.title}</h3><p>${l.jurisdiction}</p><div class="topic-preview">${l.topics.slice(0,3).map(t=>`<span>${t}</span>`).join('')}</div><div class="law-actions"><button class="star" data-star="${l.id}" aria-label="รายการโปรด">${isFavorite(l.id)?'★':'☆'}</button><div class="law-action-right">${src?`<a class="direct-open" href="${src.url}" target="_blank" rel="noopener">เปิดกฎหมาย ↗</a>`:''}<button class="open" data-open="${l.id}">รายละเอียด</button></div></div></article>`}).join('');
   document.querySelectorAll('[data-star]').forEach(b=>b.addEventListener('click',()=>toggleFavorite(b.dataset.star))); document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openLaw(b.dataset.open)));
 }
 function render(){ renderGroups(); renderCategories(); renderLaws(); $('showFavorites').textContent=favoritesOnly?'★ กำลังดูกฎหมายของฉัน':'☆ กฎหมายของฉัน'; }
@@ -131,6 +132,7 @@ const smartTypeNames = {
   commercial:'อาคารพาณิชยกรรม / ร้านค้า', hotel:'โรงแรม', theater:'โรงมหรสพ', service:'สถานบริการ',
   warehouse:'คลังสินค้า', factory:'โรงงาน', other:'อาคารประเภทอื่น'
 };
+const smartActionNames = {new:'สร้างใหม่', alter:'ดัดแปลง / ต่อเติม', demolish:'รื้อถอน'};
 const smartLocationNames = {nonthaburi:'เทศบาลนครนนทบุรี', bangkok:'กรุงเทพมหานคร', other:'พื้นที่อื่น / ยังไม่ระบุ'};
 
 function smartAdd(map,id,level,reason){
@@ -141,6 +143,7 @@ function smartAdd(map,id,level,reason){
   else if(reason && !prev.reason.includes(reason)) prev.reason += ` • ${reason}`;
 }
 function analyzeSmart(){
+  const action=$('smartAction').value;
   const type=$('smartType').value;
   const height=Number($('smartHeight').value)||0;
   const area=Number($('smartArea').value)||0;
@@ -149,59 +152,76 @@ function analyzeSmart(){
   const rec=new Map();
   const warnings=[];
 
-  smartAdd(rec,'building-control-act-2522','core','กฎหมายแม่บทเรื่องการก่อสร้าง การอนุญาต การตรวจ และคำสั่งตามกฎหมายควบคุมอาคาร');
-  smartAdd(rec,'a1','core',road>0?`ต้องตรวจลักษณะอาคาร ที่ว่าง และระยะที่สัมพันธ์กับถนนที่กรอก ${road.toLocaleString('th-TH')} ม.`:'ต้องตรวจลักษณะอาคาร ที่ว่าง ระยะร่น และข้อกำหนดพื้นฐานของอาคาร');
-  smartAdd(rec,'c3','core','ใช้ตรวจขั้นตอน คำขอ เอกสาร ใบอนุญาต การต่ออายุ/โอน และใบรับรอง');
-  smartAdd(rec,'c8','core','ใช้ตรวจหลักเกณฑ์และวิธีการก่อสร้าง ดัดแปลง รื้อถอน เคลื่อนย้าย ใช้หรือเปลี่ยนการใช้อาคาร');
-  smartAdd(rec,'a10-2','conditional','ควรตรวจฐานรากและพื้นดินที่รองรับอาคารประกอบการออกแบบ');
-  smartAdd(rec,'a10-3','conditional','ควรตรวจหลักการออกแบบโครงสร้างและวัสดุโครงสร้าง');
+  smartAdd(rec,'building-control-act-2522','core',`กฎหมายแม่บทสำหรับกรณี “${smartActionNames[action]}” และอำนาจ/ขั้นตอนตามกฎหมายควบคุมอาคาร`);
+  smartAdd(rec,'c3','core',`ตรวจคำขอ เอกสาร และกระบวนการอนุญาตสำหรับการ${smartActionNames[action]}`);
+  smartAdd(rec,'c8','core',`ตรวจหลักเกณฑ์และวิธีดำเนินการสำหรับการ${smartActionNames[action]}`);
+
+  if(action==='new'){
+    smartAdd(rec,'a1','core',road>0?`งานสร้างใหม่ต้องตรวจลักษณะอาคาร ที่ว่าง และระยะที่สัมพันธ์กับถนนที่กรอก ${road.toLocaleString('th-TH')} ม.`:'งานสร้างใหม่ต้องตรวจลักษณะอาคาร ที่ว่าง ระยะร่น และข้อกำหนดพื้นฐานของอาคาร');
+    smartAdd(rec,'a10-2','conditional','งานสร้างใหม่ควรตรวจฐานรากและพื้นดินที่รองรับอาคาร');
+    smartAdd(rec,'a10-3','conditional','งานสร้างใหม่ควรตรวจหลักการออกแบบโครงสร้างและวัสดุโครงสร้าง');
+  } else if(action==='alter'){
+    smartAdd(rec,'c4','direct','ใช้แยกว่าเรื่องที่ทำถือเป็น “ดัดแปลงอาคาร” หรืออยู่ในข้อยกเว้นที่ไม่ถือเป็นการดัดแปลง');
+    smartAdd(rec,'a1','core',road>0?`ส่วนที่ดัดแปลงยังต้องตรวจลักษณะอาคาร ที่ว่าง และระยะที่สัมพันธ์กับถนน ${road.toLocaleString('th-TH')} ม.`:'ส่วนที่ดัดแปลงยังต้องตรวจลักษณะอาคาร ที่ว่าง ระยะร่น และข้อกำหนดพื้นฐาน');
+    smartAdd(rec,'c9','conditional','ถ้ามีใบอนุญาต/แบบเดิม ให้ตรวจเงื่อนไขการเปลี่ยนแปลงหรือทำต่างจากแบบที่ได้รับอนุญาต');
+    smartAdd(rec,'a10-3','conditional','ถ้าดัดแปลงกระทบโครงสร้าง ต้องตรวจข้อกำหนดด้านโครงสร้างและวัสดุ');
+    smartAdd(rec,'c7','conditional','ถ้าเป็นการเสริมความมั่นคงเพื่อต้านแผ่นดินไหว ให้เปิดกฎหมายเฉพาะฉบับนี้');
+  } else if(action==='demolish'){
+    smartAdd(rec,'c4','direct','ใช้ตรวจนิยาม/ส่วนของโครงสร้างที่เข้าข่าย “รื้อถอนอาคาร”');
+    smartAdd(rec,'c8','direct','ใช้ตรวจวิธีและเงื่อนไขในการรื้อถอน รวมถึงการควบคุมงานตามกรณี');
+    if(height>15) warnings.push('ความสูงมากกว่า 15 ม. เป็นข้อมูลสำคัญต่อการตรวจเงื่อนไขการรื้อถอนตาม พ.ร.บ.ควบคุมอาคาร ควรเปิดมาตรา 22 ตรวจระยะจากอาคารอื่น/ที่สาธารณะประกอบ');
+    warnings.push('กรณีรื้อถอน ต้องดูระยะห่างจากอาคารอื่นหรือที่สาธารณะเพิ่มเติม ซึ่งยังไม่ได้เป็นช่องกรอกใน Smart Check เวอร์ชันนี้');
+  }
 
   let classification=[];
-  if(height>=23){
-    classification.push('ความสูงตั้งแต่ 23 ม. → เข้าข่ายนิยาม “อาคารสูง”');
-    smartAdd(rec,'a3','direct',`ความสูง ${height.toLocaleString('th-TH')} ม. ถึงเกณฑ์อาคารสูงที่ต้องเปิดตรวจข้อกำหนดเฉพาะ`);
-  }
-  if(area>=10000){
-    classification.push('พื้นที่รวมตั้งแต่ 10,000 ตร.ม. → เข้าข่าย “อาคารขนาดใหญ่พิเศษ”');
-    smartAdd(rec,'a3','direct',`พื้นที่รวม ${area.toLocaleString('th-TH')} ตร.ม. ถึงเกณฑ์อาคารขนาดใหญ่พิเศษ`);
-  }
-  const large = area>2000 || (height>=15 && area>1000 && area<=2000);
-  if(large){
-    classification.push('ข้อมูลพื้นที่/ความสูงเข้าเงื่อนไขที่ควรตรวจนิยาม “อาคารขนาดใหญ่” ในกฎ 55');
-    smartAdd(rec,'a1','direct','ข้อมูลพื้นที่และความสูงเข้าเงื่อนไขที่ควรตรวจข้อกำหนดสำหรับอาคารขนาดใหญ่');
+  if(action!=='demolish'){
+    if(height>=23){
+      classification.push('ความสูงตั้งแต่ 23 ม. → เข้าข่ายนิยาม “อาคารสูง”');
+      smartAdd(rec,'a3','direct',`ความสูง ${height.toLocaleString('th-TH')} ม. ถึงเกณฑ์อาคารสูงที่ต้องเปิดตรวจข้อกำหนดเฉพาะ`);
+    }
+    if(area>=10000){
+      classification.push('พื้นที่รวมตั้งแต่ 10,000 ตร.ม. → เข้าข่าย “อาคารขนาดใหญ่พิเศษ”');
+      smartAdd(rec,'a3','direct',`พื้นที่รวม ${area.toLocaleString('th-TH')} ตร.ม. ถึงเกณฑ์อาคารขนาดใหญ่พิเศษ`);
+    }
+    const large = area>2000 || (height>=15 && area>1000 && area<=2000);
+    if(large){
+      classification.push('ข้อมูลพื้นที่/ความสูงเข้าเงื่อนไขที่ควรตรวจนิยาม “อาคารขนาดใหญ่” ในกฎ 55');
+      smartAdd(rec,'a1','direct','ข้อมูลพื้นที่และความสูงเข้าเงื่อนไขที่ควรตรวจข้อกำหนดสำหรับอาคารขนาดใหญ่');
+    }
+
+    const parkingTypes=['residential','condo','office','commercial','hotel','theater','service'];
+    if(parkingTypes.includes(type)){
+      smartAdd(rec,'a4','conditional',`ประเภท ${smartTypeNames[type]} ควรตรวจว่าเข้าประเภท/ขนาดที่ต้องจัดจำนวนที่จอดรถหรือไม่`);
+      smartAdd(rec,'a5','conditional','หากต้องจัดที่จอดรถ ให้ตรวจลักษณะ/ขนาดและระบบที่เกี่ยวข้องเพิ่มเติม');
+    }
+    if(type==='hotel'){
+      smartAdd(rec,'a13','direct','เลือกประเภทโรงแรม จึงต้องเปิดข้อกำหนดลักษณะและระบบความปลอดภัยของโรงแรม');
+      smartAdd(rec,'c2','conditional','ควรตรวจสถานะอาคารประเภทควบคุมการใช้และใบรับรองตามเงื่อนไข');
+    }
+    if(type==='theater'){
+      smartAdd(rec,'a8','direct','เลือกโรงมหรสพ จึงมีกฎหมายเฉพาะเรื่องการอนุญาตใช้และระบบความปลอดภัย');
+      smartAdd(rec,'c2','conditional','ควรตรวจอาคารประเภทควบคุมการใช้และใบรับรอง');
+    }
+    if(type==='service'){
+      smartAdd(rec,'a9','direct','เลือกสถานบริการ จึงมีกฎหมายเฉพาะเรื่องระบบความปลอดภัย');
+      smartAdd(rec,'c2','conditional','ควรตรวจอาคารประเภทควบคุมการใช้และใบรับรอง');
+    }
+    if(['condo','office','commercial','hotel','theater','service'].includes(type)){
+      smartAdd(rec,'a7','conditional','ตรวจเพิ่มเติมว่าอาคารประเภท/ขนาดนี้อยู่ในบังคับสิ่งอำนวยความสะดวกสำหรับผู้พิการหรือคนชราหรือไม่');
+    }
+    if(['condo','hotel','commercial','office'].includes(type)){
+      smartAdd(rec,'b5','conditional','ประเภทโครงการอาจมีเกณฑ์ EIA ที่ต้องใช้ข้อมูลเพิ่ม เช่น จำนวนห้อง/หน่วย พื้นที่ หรือที่ตั้ง');
+    }
+    if(area>=2000 && ['office','commercial','hotel','condo','residential','other'].includes(type)){
+      smartAdd(rec,'b6','conditional','อาคารขนาดนี้ควรตรวจเกณฑ์ประเภท/ขนาดของกฎหมายอนุรักษ์พลังงาน (BEC) เพิ่มเติม');
+      smartAdd(rec,'b7','conditional','หากเข้าข่าย BEC ต้องตรวจค่ามาตรฐานการออกแบบที่เกี่ยวข้อง');
+    }
+    smartAdd(rec,'a12','conditional','ควรตรวจระบบระบายน้ำ น้ำเสีย และข้อกำหนดสุขาภิบาลตามประเภท/ขนาดอาคาร');
   }
 
-  const parkingTypes=['residential','condo','office','commercial','hotel','theater','service'];
-  if(parkingTypes.includes(type)){
-    smartAdd(rec,'a4','conditional',`ประเภท ${smartTypeNames[type]} ควรตรวจว่าเข้าประเภท/ขนาดที่ต้องจัดจำนวนที่จอดรถหรือไม่`);
-    smartAdd(rec,'a5','conditional','หากต้องจัดที่จอดรถ ให้ตรวจลักษณะ/ขนาดและระบบที่เกี่ยวข้องเพิ่มเติม');
-  }
-  if(type==='hotel'){
-    smartAdd(rec,'a13','direct','เลือกประเภทโรงแรม จึงต้องเปิดข้อกำหนดลักษณะและระบบความปลอดภัยของโรงแรม');
-    smartAdd(rec,'c2','conditional','ควรตรวจสถานะอาคารประเภทควบคุมการใช้และใบรับรองตามเงื่อนไข');
-  }
-  if(type==='theater'){
-    smartAdd(rec,'a8','direct','เลือกโรงมหรสพ จึงมีกฎหมายเฉพาะเรื่องการอนุญาตใช้และระบบความปลอดภัย');
-    smartAdd(rec,'c2','conditional','ควรตรวจอาคารประเภทควบคุมการใช้และใบรับรอง');
-  }
-  if(type==='service'){
-    smartAdd(rec,'a9','direct','เลือกสถานบริการ จึงมีกฎหมายเฉพาะเรื่องระบบความปลอดภัย');
-    smartAdd(rec,'c2','conditional','ควรตรวจอาคารประเภทควบคุมการใช้และใบรับรอง');
-  }
-  if(['condo','office','commercial','hotel','theater','service'].includes(type)){
-    smartAdd(rec,'a7','conditional','ตรวจเพิ่มเติมว่าอาคารประเภท/ขนาดนี้อยู่ในบังคับสิ่งอำนวยความสะดวกสำหรับผู้พิการหรือคนชราหรือไม่');
-  }
-  if(['condo','hotel','commercial','office'].includes(type)){
-    smartAdd(rec,'b5','conditional','ประเภทโครงการอาจมีเกณฑ์ EIA ที่ต้องใช้ข้อมูลเพิ่ม เช่น จำนวนห้อง/หน่วย พื้นที่ หรือที่ตั้ง');
-  }
-  if(area>=2000 && ['office','commercial','hotel','condo','residential','other'].includes(type)){
-    smartAdd(rec,'b6','conditional','อาคารขนาดนี้ควรตรวจเกณฑ์ประเภท/ขนาดของกฎหมายอนุรักษ์พลังงาน (BEC) เพิ่มเติม');
-    smartAdd(rec,'b7','conditional','หากเข้าข่าย BEC ต้องตรวจค่ามาตรฐานการออกแบบที่เกี่ยวข้อง');
-  }
-  smartAdd(rec,'a12','conditional','ควรตรวจระบบระบายน้ำ น้ำเสีย และข้อกำหนดสุขาภิบาลตามประเภท/ขนาดอาคาร');
-
+  const largeLocal = area>2000 || (height>=15 && area>1000 && area<=2000);
   if(location==='nonthaburi'){
-    const localApplies = ['condo','office','commercial','hotel','theater'].includes(type) || (type==='residential' && area>=300) || large;
+    const localApplies = action!=='demolish' && (['condo','office','commercial','hotel','theater'].includes(type) || (type==='residential' && area>=300) || largeLocal);
     if(localApplies) smartAdd(rec,'nonthaburi-parking-2560','local','ที่ตั้งอยู่เทศบาลนครนนทบุรี และประเภท/ขนาดที่กรอกมีประเด็นต้องตรวจเทศบัญญัติที่จอดรถท้องถิ่น');
     warnings.push('ฐานท้องถิ่นนนทบุรีในแอปตอนนี้มีเทศบัญญัติที่จอดรถเป็นหลัก ผังเมืองและข้อบัญญัติท้องถิ่นฉบับอื่นยังต้องตรวจเพิ่มจากต้นฉบับที่ใช้บังคับจริง');
   } else if(location==='bangkok'){
@@ -212,23 +232,24 @@ function analyzeSmart(){
     warnings.push('ยังไม่ระบุข้อบัญญัติท้องถิ่นและผังเมืองของพื้นที่จริง ระบบจึงแสดงกฎหมายกลางเป็นหลัก');
   }
 
-  if(road<=0) warnings.push('ยังไม่ได้กรอกความกว้างถนน จึงยังไม่สามารถชี้ประเด็นเรื่องถนน/ระยะร่นได้ละเอียดขึ้น');
-  warnings.push('Smart Check เป็นการคัด “กฎหมายที่ควรเปิดตรวจ” เบื้องต้น ไม่ใช่คำวินิจฉัยว่าอาคารผ่านหรือผิดกฎหมาย และยังมีเงื่อนไขอื่นที่ข้อมูล 5 ช่องนี้ไม่ครอบคลุม');
+  if(road<=0 && action!=='demolish') warnings.push('ยังไม่ได้กรอกความกว้างถนน จึงยังไม่สามารถชี้ประเด็นเรื่องถนน/ระยะร่นได้ละเอียดขึ้น');
+  warnings.push('Smart Check เป็นการคัด “กฎหมายที่ควรเปิดตรวจ” เบื้องต้น ไม่ใช่คำวินิจฉัยว่าอาคารผ่านหรือผิดกฎหมาย และยังมีเงื่อนไขอื่นที่ข้อมูลในหน้านี้ไม่ครอบคลุม');
 
   const order={core:1,direct:2,local:3,conditional:4};
   const rows=[...rec.values()].sort((a,b)=>order[a.level]-order[b.level] || a.law.code.localeCompare(b.law.code,'th'));
   const typeText=smartTypeNames[type]; const locText=smartLocationNames[location];
-  let summary=`${typeText}${height?` • สูง ${height.toLocaleString('th-TH')} ม.`:''}${area?` • ${area.toLocaleString('th-TH')} ตร.ม.`:''} • ${locText}`;
+  let summary=`${smartActionNames[action]} • ${typeText}${height?` • สูง ${height.toLocaleString('th-TH')} ม.`:''}${area?` • ${area.toLocaleString('th-TH')} ตร.ม.`:''} • ${locText}`;
   if(classification.length) summary += ` — ${classification.join(' / ')}`;
   $('smartSummary').textContent=summary;
   $('smartCount').textContent=`${rows.length} ฉบับ/ชุด`;
   const levelLabel={core:'กฎหมายหลัก',direct:'เข้าเงื่อนไขเด่น',local:'กฎหมายพื้นที่',conditional:'ตรวจเพิ่มตามเงื่อนไข'};
-  $('smartLawList').innerHTML=rows.map(r=>`<article class="smart-law"><span class="smart-level ${r.level}">${levelLabel[r.level]}</span><div class="smart-law-top"><div><h3>${r.law.title}</h3><p>${r.reason}</p></div><button class="mini-open" type="button" data-smart-open="${r.law.id}">เปิดดู</button></div></article>`).join('');
+  $('smartLawList').innerHTML=rows.map(r=>{const src=primarySource(r.law);return `<article class="smart-law"><span class="smart-level ${r.level}">${levelLabel[r.level]}</span><div class="smart-law-top"><div><h3>${r.law.title}</h3><p>${r.reason}</p></div><div class="smart-law-actions">${src?`<a class="mini-direct" href="${src.url}" target="_blank" rel="noopener">เปิดกฎหมาย ↗</a>`:''}<button class="mini-open" type="button" data-smart-open="${r.law.id}">รายละเอียด</button></div></div></article>`}).join('');
   $('smartWarnings').innerHTML=warnings.map(w=>`<div class="smart-warning">⚠️ ${w}</div>`).join('');
   document.querySelectorAll('[data-smart-open]').forEach(b=>b.addEventListener('click',()=>openLaw(b.dataset.smartOpen)));
   $('smartResults').classList.remove('hidden');
   $('smartResults').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
+
 $('smartAnalyze').addEventListener('click', analyzeSmart);
 
 $('searchInput').addEventListener('input',()=>{ favoritesOnly=false; renderLaws(); });

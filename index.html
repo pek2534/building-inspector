@@ -18,7 +18,7 @@
         <h1>กฎหมายตรวจอาคาร</h1>
         <p>ค้นเรื่องที่ต้องตรวจ → ดูกฎหมายที่เกี่ยวข้อง → เปิด PDF ต้นฉบับ/ฉบับรวม</p>
       </div>
-      <div class="version-pill">v0.4</div>
+      <div class="version-pill">v0.5</div>
     </div>
   </header>
 
@@ -36,12 +36,19 @@
         <div>
           <div class="eyebrow dark">SMART CHECK</div>
           <h2 id="smartCheckTitle">🧭 วิเคราะห์กฎหมายเบื้องต้น</h2>
-          <p>กรอกข้อมูลอาคาร แล้วระบบจะคัด “กฎหมายที่ควรเปิดตรวจ” จากฐานในแอป</p>
+          <p>เลือกประเภทงาน แล้วกรอกข้อมูลอาคาร ระบบจะคัด “กฎหมายที่ควรเปิดตรวจ” พร้อมลิงก์ตรงไปยังฉบับที่อ้างอิง</p>
         </div>
         <span class="beta-pill">เบื้องต้น</span>
       </div>
 
       <div class="smart-grid">
+        <label class="wide">ลักษณะการดำเนินการ
+          <select id="smartAction">
+            <option value="new">สร้างใหม่</option>
+            <option value="alter">ดัดแปลง / ต่อเติม</option>
+            <option value="demolish">รื้อถอน</option>
+          </select>
+        </label>
         <label>ชนิดอาคาร
           <select id="smartType">
             <option value="house">บ้านพักอาศัย</option>
@@ -136,7 +143,7 @@
 
     <section class="source-card">
       <h2>แหล่งอ้างอิงชุดเริ่มต้น</h2>
-      <p>ฐาน v0.4 รวมสารบัญกฎหมายใช้บ่อยของ ASA ครบกลุ่ม A / B / C และเพิ่ม Smart Check เพื่อคัดกฎหมายเบื้องต้นจากข้อมูลอาคาร พร้อมกฎหมายแม่บทและเทศบัญญัตินนทบุรี รายการที่ตรวจพบ PDF โดยตรงจะเปิดตรงเอกสาร ส่วนรายการที่ยังไม่พบลิงก์ตรงจะพาไปสารบัญ ASA เพื่อค้นต่อ</p>
+      <p>ฐาน v0.5 รวมสารบัญกฎหมายใช้บ่อยของ ASA กลุ่ม A / B / C พร้อม Smart Check แยก “สร้างใหม่ / ดัดแปลง / รื้อถอน” และปรับเอกสารแต่ละรายการให้เปิดลิงก์เฉพาะกฎหมายที่อ้างอิงโดยตรงแทนการพาไปหน้าสารบัญรวม</p>
       <a class="text-link" href="https://download.asa.or.th/03media/04law/fubr/Content_240116.pdf" target="_blank" rel="noopener">เปิดสารบัญกฎหมายใช้บ่อยของ ASA ↗</a>
       <small>ตรวจสอบโครงสารบัญและลิงก์ชุดนี้ล่าสุด: 4 ต.ค. 2569</small>
     </section>
@@ -177,7 +184,7 @@
     </form>
   </dialog>
 
-  <footer>Building Inspector v0.4 • Smart Check + Law reference</footer>
+  <footer>Building Inspector v0.5 • Direct Law Links + Action Smart Check</footer>
 
   <script src="script.js" defer></script>
 </body>
